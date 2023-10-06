@@ -20,7 +20,9 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   percent = percent / (100 * 12);
   let creditBody = amount - contribution;
   let monthlyPayment = creditBody * (percent + percent / ((1 + percent) ** countMonths - 1));
-  let totalAmount = +(monthlyPayment * countMonths.toFixed(2));
+  let totalAmount = +((monthlyPayment * countMonths).toFixed(2));
 
   return totalAmount;
 }
+
+calculateTotalMortgage(10, 0, 50000, 12)
